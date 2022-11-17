@@ -12,7 +12,7 @@
 <head>
   <meta charset="utf-8">
   <title>Progate</title>
-  <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
+  <!-- <link rel="styleshet" type="text/css" href="stylesheet.css"> -->
   <link href="./css/output.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
 </head>
