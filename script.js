@@ -39,3 +39,14 @@ $(document).ready(function () {
         $('#tableMenu').load('ajaxMenu.php?keyword=' + $('#keyword').val());
     });
 });
+
+// const logout = document.querySelector('#logout');
+// const login = document.querySelector('#login');
+
+// var hasLogin = 0;
+
+// if(hasLogin === 1){
+//     logout.classList.toggle('hidden');
+//     login.classList.toggle('hidden');
+// };
+

@@ -153,4 +153,22 @@ function register($data){
     mysqli_query($conn, "INSERT INTO user VALUES('', '$namaLengkap', '$email', '$username', '$password' )");
     return mysqli_affected_rows($conn);
 }
+function checkout($data){
+  global $conn;
+
+  //get data
+  $nama = htmlspecialchars($data["nama"]);
+  $jumlah = htmlspecialchars($data["jumlah"]);
+  $noMeja = htmlspecialchars($data["noMeja"]);
+  $idMenu = htmlspecialchars($data["idmenu"]);
+  $harga = htmlspecialchars($data["harga"]);
+
+  $hargaTotal = $harga * $jumlah;
+
+  //insert data
+  $query = "INSERT INTO penjualan VALUES ('', '$nama', '$noMeja', '$jumlah', '$hargaTotal', '$idMenu')";
+  mysqli_query($conn, $query);
+  
+  return mysqli_affected_rows($conn);
+}
 ?>

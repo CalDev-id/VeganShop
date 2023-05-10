@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       screens: {
         '2xl' : '1320px',
+        'sm' : '480px',
       },
       colors: {
         body: '#f3f4fb',
@@ -24,7 +25,7 @@ module.exports = {
         third: '#49a011'
       },
       backgroundImage: {
-        bawah: "url('img/bannerfood.jpg')",
+        bawah: 'url("img/bannerfood.jpg")'
       },
     },
   },

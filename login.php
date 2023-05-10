@@ -22,6 +22,7 @@ if(isset($_COOKIE["id"]) && isset($_COOKIE["uname"])){
 //sessio0n check
 if (isset($_SESSION["login"])) {
 	header("location: index.php");
+	$_SESSION["login"] = true;
 	exit;
 }
 
@@ -58,6 +59,8 @@ if (isset($_POST["login"])) {
 			}
 
 			header("Location: index.php");
+			$hasLogin = true;
+			return $hasLogin;
 			exit;
 		}
 	}
@@ -83,11 +86,11 @@ if (isset($_POST["login"])) {
 	<section>
 		<div class="">
 			<div class="flex justify-center">
-				<div class="kiri w-1/2 bg-white">
+				<div class="kiri md:w-1/2 w-full bg-white md:mb-0 pb-20">
 					<a href="index.php" class="flex justify-end pt-10 pr-10 font-semibold text-primary">Back To Page</a>
 
 					<!--login-->
-					<div id="boxLogin" style="display:flex;" class="justify-center mt-44">
+					<div id="boxLogin" style="display:flex;" class="justify-center md:mt-44 mt-10">
 						<div>
 							<div class="mb-5">
 								<h1 class="font-semibold text-3xl">Selamat Datang</h1>
@@ -135,7 +138,7 @@ if (isset($_POST["login"])) {
 					</div>
 
 					<!-- register-->
-					<div id="boxRegist" style="display:none;" class="justify-center mt-44">
+					<div id="boxRegist" style="display:none;" class="justify-center md:mt-44 mt-10">
 						<div>
 							<div class="mb-10">
 								<h1 class="font-semibold text-3xl">Daftar Akun</h1>
@@ -144,24 +147,24 @@ if (isset($_POST["login"])) {
 							</div>
 							<div class="regis-form">
 								<form action="" method="post">
-									<div class="flex pb-10">
+									<div class="md:flex md:pb-10">
 										<div class="full-name pr-5">
 											<label for="user-fullname" class="font-semibold text-lg border-b-[2px] border-primary">Nama Lengkap</label><br>
-											<input type="text" name="namaLengkap" id="user-fullname" placeholder="Enter your full name" required="required" class="border-b-[1px] border-black p-2 outline-none" />
+											<input type="text" name="namaLengkap" id="user-fullname" placeholder="Enter your full name" required="required" class="border-b-[1px] border-black p-2 outline-none w-80 md:w-60" />
 										</div>
 										<div class="email pr-5">
 											<label for="user-email" class="font-semibold text-lg border-b-[2px] border-primary">Email</label><br>
-											<input type="email" name="email" id="user-email" placeholder="Enter your email" required="required" class="border-b-[1px] border-black p-2 outline-none" />
+											<input type="email" name="email" id="user-email" placeholder="Enter your email" required="required" class="border-b-[1px] border-black p-2 outline-none w-80 md:w-60 " />
 										</div>
 									</div>
-									<div class="flex">
+									<div class="md:flex">
 										<div class="username pr-5">
 											<label for="user-regis" class="font-semibold text-lg border-b-[2px] border-primary">Username</label><br>
-											<input type="text" name="username" id="user-regis" placeholder="Enter your username" required="required" class="border-b-[1px] border-black p-2 outline-none" />
+											<input type="text" name="username" id="user-regis" placeholder="Enter your username" required="required" class="border-b-[1px] border-black p-2 outline-none w-80 md:w-60 " />
 										</div>
 										<div class="pass-regis pr-5">
 											<label for="user-passregis" class="font-semibold text-lg border-b-[2px] border-primary">Password</label><br>
-											<input type="password" name="password" id="user-passregis" placeholder="Enter your Password" required="required" class="border-b-[1px] border-black p-2 outline-none" />
+											<input type="password" name="password" id="user-passregis" placeholder="Enter your Password" required="required" class="border-b-[1px] border-black p-2 outline-none w-80 md:w-60 " />
 										</div>
 									</div>
 									<div class="text-center">
@@ -180,7 +183,7 @@ if (isset($_POST["login"])) {
 					</div>
 				</div>
 
-				<div id="iconRegLog" class="kanan w-1/2 bg-secondary">
+				<div id="iconRegLog" class="kanan w-1/2 bg-secondary md:block hidden">
 					<img src="img/chef.png" class="p-36">
 				</div>
 			</div>

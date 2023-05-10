@@ -71,7 +71,7 @@ if (isset($_POST["submit"])) {
         <input class="bg-primary text-center mx-auto flex text-white px-5 py-3 rounded-full" type="submit" value="Order">
       </form>
     </div>
-    <!-- tambah menu -->
+    <!-- Edit menu -->
     <section id="tambahMenu" class="w-full bg-white bg-opacity-90 h-full absolute top-0">
       <div class="flex justify-center">
         <div class="bg-secondary py-20 px-14 mt-32 w-1/3">

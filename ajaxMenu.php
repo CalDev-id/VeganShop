@@ -23,7 +23,7 @@ $menu = query("SELECT * FROM menu LIMIT $dataStart, $MaxData");
 $keyword = $_GET["keyword"];
 $query = "SELECT * FROM menu 
     WHERE 
-nama LIKE '%$keyword%'
+nama LIKE '%$keyword%' LIMIT $dataStart, $MaxData
 ";
 
 $menu = query($query);
@@ -33,7 +33,7 @@ $menu = query($query);
     <div class="menu-items md:flex md:justify-between mb-2 md:flex-row flex-wrap">
         <?php foreach ($menu as $row) : ?>
             <div class="text-center rounded-3xl hover:shadow-lg shadow-md mb-10 w-96 mx-auto">
-                <a class="right-0 float-right" href="edit.php?id=<?= $row["id"]; ?>"><span class="text-red-700 font-bold text-3xl"><i class='bx bxs-edit'></i></span></a>
+                <a class="right-0 float-right hidden" href="edit.php?id=<?= $row["id"]; ?>"><span class="text-red-700 font-bold text-3xl"><i class='bx bxs-edit'></i></span></a>
                 <a id="closeEdit" class="right-0 float-right hidden" href="delete.php?id=<?= $row["id"]; ?>" onclick="return confirm('Hapus dari menu?')" ;><span class="text-red-700 font-bold text-3xl"><i class='bx bx-x'></i></span></a>
                 <img src="img/<?php echo $row["image"]; ?>" class="w-80 h-80 flex justify-center mx-auto">
                 <h3 class="font-semibold text-center text-xl"><?php echo $row["nama"]; ?></h3>

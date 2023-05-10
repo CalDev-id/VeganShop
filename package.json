@@ -3,6 +3,9 @@
     "tailwindcss": "^3.1.8"
   },
   "scripts": {
-    "dev" : "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch"
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch"
+  },
+  "dependencies": {
+    "chart.js": "^4.0.1"
   }
 }
